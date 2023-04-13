@@ -1301,12 +1301,19 @@ export default class Dropzone extends Emitter {
           }
         };
 
-        if (this.options.parallelChunkUploads) {
-          for (let i = 0; i < file.upload.totalChunkCount; i++) {
+        // enable limiting the number of parallel chunk uploads based off parallelUploads
+        // https://gitlab.com/meno/dropzone/-/merge_requests/53/diffs
+        if (this.options.parallelChunkUploads === false) {
+          handleNextChunk();
+        } else {
+          const triggerCount = Math.min(
+            this.options.parallelChunkUploads === true?
+              this.options.parallelUploads : this.options.parallelChunkUploads,
+            file.upload.totalChunkCount
+          );
+          for (let i = 0; i < triggerCount; i++) {
             handleNextChunk();
           }
-        } else {
-          handleNextChunk();
         }
       } else {
         let dataBlocks = [];

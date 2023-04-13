@@ -64,7 +64,9 @@ let defaultOptions = {
   chunkSize: 2 * 1024 * 1024,
 
   /**
-   * If `true`, the individual chunks of a file are being uploaded simultaneously.
+   * How many chunks should be triggered simultaneously for upload. If `true`, the
+   * this will be limited by `parallelUploads`. If set to `false` chunks will be
+   * uploaded one after another.
    */
   parallelChunkUploads: false,
 

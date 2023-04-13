@@ -1,7 +1,7 @@
 {
-  "name": "dropzone",
-  "version": "6.0.0-beta.2",
-  "description": "Handles drag and drop of files for you.",
+  "name": "dropzone-opaque",
+  "version": "6.0.0-beta.2-1",
+  "description": "Modified dropzone js version 6.0.0-beta.2 to support limiting number of parallel chunks",
   "keywords": [
     "dragndrop",
     "drag and drop",
