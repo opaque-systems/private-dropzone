@@ -1,3 +1,14 @@
+## Intro
+This is a slightly modified package of dropzone to enable limiting the number of parallel chunk uploads at a time
+
+How to publish to npm:
+1) Build the package
+`npm run build`
+2) In the root of your package, login to npm
+`npm login`
+3) Publish to npm. Make sure the name or version number is different. Npm will not let you publish if the name and version of the package already exists.
+`npm publish`
+
 <img alt="Dropzone.js" src="https://raw.githubusercontent.com/dropzone/dropzone/assets/github-logo.svg" />
 
 [![Test and Release](https://github.com/dropzone/dropzone/actions/workflows/test-and-release.yml/badge.svg)](https://github.com/dropzone/dropzone/actions/workflows/test-and-release.yml)
